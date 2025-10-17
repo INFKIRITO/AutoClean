@@ -12,10 +12,10 @@ def main():
     parser.add_argument(
     '--source',
     type=str,
-    default="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv",
+    default="https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",
     help='Data Source URL'
     )
-    parser.add_argument('--table', type=str, default="etl_data", help='DB Table name')
+    parser.add_argument('--table', type=str, default="etl_winequality", help='DB Table name')
     args = parser.parse_args()
 
     # Fallback defaults
