@@ -2,3 +2,5 @@ etl/config.py
 /include
 /lib
 /Scripts
+/etl.log
+/etl/__pycache__/

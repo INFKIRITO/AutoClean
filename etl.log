@@ -1,0 +1,915 @@
+2025-10-17 10:11:37,795 - INFO - ETL job Started
+2025-10-17 10:12:01,198 - ERROR - ETL job failed: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000027F59F5EE10>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x0000027F59F5EE10>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000027F59F5EE10>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 18, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 8, in extract_csv_from_url
+    response = requests.get(url) # request the url for data
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000027F59F5EE10>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+2025-10-17 10:21:44,246 - INFO - ETL job Started
+2025-10-17 10:22:05,299 - ERROR - ETL job failed: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B531E05D30>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001B531E05D30>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B531E05D30>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 18, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 8, in extract_csv_from_url
+    response = requests.get(url) # request the url for data
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B531E05D30>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+2025-10-17 10:24:48,197 - INFO - ETL job Started
+2025-10-17 10:25:09,249 - ERROR - ETL job failed: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C30B18EF00>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001C30B18EF00>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C30B18EF00>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 8, in extract_csv_from_url
+    response = requests.get(url) # request the url for data
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C30B18EF00>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+2025-10-17 10:32:08,401 - INFO - ETL job Started
+2025-10-17 10:32:29,452 - ERROR - ETL job failed: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001D5DE9DEB70>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001D5DE9DEB70>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001D5DE9DEB70>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 8, in extract_csv_from_url
+    response = requests.get(url) # request the url for data
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001D5DE9DEB70>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+2025-10-17 10:45:11,195 - INFO - ETL job Started
+2025-10-17 10:45:32,267 - ERROR - ETL job failed: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002318173F740>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000002318173F740>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002318173F740>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 8, in extract_csv_from_url
+    response = requests.get(url) # request the url for data
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='people.sc.fsu.edu', port=443): Max retries exceeded with url: /~jburkardt/data/csv/airtravel.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002318173F740>, 'Connection to people.sc.fsu.edu timed out. (connect timeout=None)'))
+2025-10-17 10:58:08,726 - INFO - ETL job Started
+2025-10-17 10:58:08,842 - ERROR - ETL job failed: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000199AEF15880>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000199AEF15880>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000199AEF15880>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 14, in extract_csv_from_url
+    response = requests.get(url)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000199AEF15880>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:00:55,061 - INFO - ETL job Started
+2025-10-17 11:00:55,061 - INFO - Downloading CSV from URL: https://covid.ourworldindata.org/data/owid-covid-data.csv
+2025-10-17 11:00:55,074 - ERROR - Failed to fetch CSV: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:00:55,084 - ERROR - ETL job failed: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024B6CD4EB10>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:02:08,539 - INFO - ETL job Started
+2025-10-17 11:02:08,539 - INFO - Downloading CSV from URL: https://covid.ourworldindata.org/data/owid-covid-data.csv
+2025-10-17 11:02:08,554 - ERROR - Failed to fetch CSV: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:02:08,559 - ERROR - ETL job failed: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000021E7BADF2F0>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:02:14,616 - INFO - ETL job Started
+2025-10-17 11:02:14,616 - INFO - Downloading CSV from URL: https://covid.ourworldindata.org/data/owid-covid-data.csv
+2025-10-17 11:02:14,632 - ERROR - Failed to fetch CSV: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:02:14,638 - ERROR - ETL job failed: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aman9\etl_pipeline\main.py", line 17, in main
+    df_raw = extract_csv_from_url(args.source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\etl\extract.py", line 19, in extract_csv_from_url
+    response = requests.get(source, timeout=30, stream=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aman9\etl_pipeline\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.ourworldindata.org', port=443): Max retries exceeded with url: /data/owid-covid-data.csv (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020FE13BF110>: Failed to resolve 'covid.ourworldindata.org' ([Errno 11001] getaddrinfo failed)"))
+2025-10-17 11:02:55,037 - INFO - ETL job Started
+2025-10-17 11:02:55,038 - INFO - Downloading CSV from URL: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:02:56,124 - INFO - Download completed, loading into DataFrame
+2025-10-17 11:02:56,147 - INFO - Extracted 194 rows, loading into test_table
+2025-10-17 11:02:56,964 - INFO - Inserted 194 rows into table 'test_table'
+2025-10-17 11:02:56,964 - INFO - ETL job completed Successfully
+2025-10-17 11:06:10,971 - INFO - ETL job Started
+2025-10-17 11:06:10,971 - INFO - Downloading CSV from URL: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:06:11,654 - INFO - Download completed, loading into DataFrame
+2025-10-17 11:06:11,672 - INFO - Extracted 194 rows, loading into test_table
+2025-10-17 11:06:11,877 - INFO - Inserted 194 rows into table 'test_table'
+2025-10-17 11:06:11,877 - INFO - ETL job completed Successfully
+2025-10-17 11:08:03,371 - INFO - ETL job Started
+2025-10-17 11:08:03,371 - INFO - Downloading CSV from URL: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:08:04,472 - INFO - Download completed, loading into DataFrame
+2025-10-17 11:08:04,493 - INFO - Extracted 194 rows, loading into etl_data
+2025-10-17 11:08:04,756 - INFO - Inserted 194 rows into table 'etl_data'
+2025-10-17 11:08:04,757 - INFO - ETL job completed Successfully
+2025-10-17 11:12:26,136 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:12:26,136 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:12:26,880 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:12:26,882 - INFO - Cleaning data...
+2025-10-17 11:12:26,887 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:12:26,887 - INFO - Loading data into table: etl_data
+2025-10-17 11:12:27,081 - INFO - Data loaded successfully!
+2025-10-17 11:12:27,081 - INFO - ETL job completed successfully!
+2025-10-17 11:14:10,699 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:14:10,699 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:14:11,710 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:14:11,711 - INFO - Cleaning data...
+2025-10-17 11:14:11,717 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:14:11,717 - INFO - Loading data into table: etl_data
+2025-10-17 11:14:11,890 - INFO - Data loaded successfully!
+2025-10-17 11:14:11,890 - INFO - ETL job completed successfully!
+2025-10-17 11:15:32,077 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:15:32,078 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:15:32,721 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:15:32,722 - INFO - Cleaning data...
+2025-10-17 11:15:32,724 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:15:32,724 - INFO - Loading data into table: etl_data
+2025-10-17 11:15:32,838 - INFO - Data loaded successfully!
+2025-10-17 11:15:32,838 - INFO - ETL job completed successfully!
+2025-10-17 11:15:57,719 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:15:57,719 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:15:58,368 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:15:58,369 - INFO - Cleaning data...
+2025-10-17 11:15:58,370 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:15:58,370 - INFO - Loading data into table: etl_data
+2025-10-17 11:15:58,490 - INFO - Data loaded successfully!
+2025-10-17 11:15:58,490 - INFO - ETL job completed successfully!
+2025-10-17 11:17:09,545 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: test_table
+2025-10-17 11:17:09,546 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:17:10,220 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:17:10,222 - INFO - Cleaning data...
+2025-10-17 11:17:10,227 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:17:10,228 - INFO - Loading data into table: test_table
+2025-10-17 11:17:10,403 - INFO - Data loaded successfully!
+2025-10-17 11:17:10,403 - INFO - ETL job completed successfully!
+2025-10-17 11:38:53,172 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: test_table
+2025-10-17 11:38:53,174 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:38:54,201 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:38:54,203 - INFO - Cleaning data...
+2025-10-17 11:38:54,208 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:38:54,208 - INFO - Loading data into table: test_table
+2025-10-17 11:38:54,516 - INFO - Data loaded successfully!
+2025-10-17 11:38:54,516 - INFO - ETL job completed successfully!
+2025-10-17 11:54:22,826 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:54:22,827 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:54:23,868 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:54:23,870 - INFO - Cleaning data...
+2025-10-17 11:54:23,876 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:54:23,876 - INFO - Loading data into table: etl_data
+2025-10-17 11:54:24,078 - INFO - Data loaded successfully!
+2025-10-17 11:54:24,078 - INFO - ETL job completed successfully!
+2025-10-17 11:56:52,465 - INFO - ETL started with source: https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv | table: etl_data
+2025-10-17 11:56:52,465 - INFO - Downloading data from https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv
+2025-10-17 11:56:53,102 - INFO - Downloaded 194 rows, 2 columns
+2025-10-17 11:56:53,104 - INFO - Cleaning data...
+2025-10-17 11:56:53,106 - INFO - Cleaned data: 194 rows, 2 columns
+2025-10-17 11:56:53,106 - INFO - Loading data into table: etl_data
+2025-10-17 11:56:53,234 - INFO - Data loaded successfully!
+2025-10-17 11:56:53,234 - INFO - ETL job completed successfully!
